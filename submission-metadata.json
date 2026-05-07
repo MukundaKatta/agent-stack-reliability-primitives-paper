@@ -1,0 +1,48 @@
+{
+  "title": "Six Reliability Primitives for LLM Agents: An Artifact Pattern for Stackable, Single-Concern Libraries",
+  "authors": [
+    {
+      "name": "Mukunda Rao Katta",
+      "affiliation": "Independent Researcher",
+      "email": "mukunda.vjcs6@gmail.com",
+      "orcid": ""
+    }
+  ],
+  "publication_date": "2026-05-07",
+  "version": "v1",
+  "resource_type": "preprint",
+  "license": "CC-BY-4.0",
+  "code_license": "MIT",
+  "repository_urls": [
+    "https://github.com/MukundaKatta/AgentFit",
+    "https://github.com/MukundaKatta/AgentGuard",
+    "https://github.com/MukundaKatta/AgentSnap",
+    "https://github.com/MukundaKatta/AgentVet",
+    "https://github.com/MukundaKatta/AgentCast",
+    "https://github.com/MukundaKatta/AgentBudget",
+    "https://github.com/MukundaKatta/AgentFitPy",
+    "https://github.com/MukundaKatta/AgentGuardPy",
+    "https://github.com/MukundaKatta/AgentSnapPy",
+    "https://github.com/MukundaKatta/AgentVetPy",
+    "https://github.com/MukundaKatta/AgentCastPy",
+    "https://github.com/MukundaKatta/AgentBudgetPy",
+    "https://github.com/MukundaKatta/AgentFitMcp",
+    "https://github.com/MukundaKatta/AgentGuardMcp",
+    "https://github.com/MukundaKatta/AgentSnapMcp",
+    "https://github.com/MukundaKatta/AgentVetMcp",
+    "https://github.com/MukundaKatta/AgentCastMcp",
+    "https://github.com/MukundaKatta/AgentBudgetMcp"
+  ],
+  "landing_page": "https://mukundakatta.github.io/agent-stack/",
+  "primary_platform_targets": [
+    "Zenodo",
+    "Qeios",
+    "Figshare",
+    "ScienceOpen",
+    "TechRxiv",
+    "OSF Preprints",
+    "Medium"
+  ],
+  "status": "prepared",
+  "notes": "Companion to karna-chat-native-assistant paper. Same artifact-paper genre: design pattern documentation, not benchmark claims."
+}
