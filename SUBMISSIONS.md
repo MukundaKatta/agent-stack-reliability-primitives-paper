@@ -1,13 +1,13 @@
 # Submission Handoff
 
-Per-platform field values + upload pointers for the agent-stack reliability primitives preprint. Mirrors the established pattern from the karna paper package — platform forms require browser-based ORCID / Google sign-in that I can't drive headlessly, so each block below is a copy-paste handoff.
+Per-platform field values and upload pointers for the agent-stack reliability primitives preprint. Mirrors the established pattern from the karna paper package. Platform forms require browser-based ORCID or Google sign-in, so each block below is a copy-paste handoff.
 
 ## Common metadata
 
 | Field | Value |
 | --- | --- |
 | Title | Six Reliability Primitives for LLM Agents: An Artifact Pattern for Stackable, Single-Concern Libraries |
-| Author | Mukunda Rao Katta — Independent Researcher — mukunda.vjcs6@gmail.com |
+| Author | Mukunda Rao Katta - Independent Researcher - mukunda.vjcs6@gmail.com |
 | ORCID | (paste your ORCID iD when each platform asks) |
 | Abstract | `abstract.txt` |
 | Keywords | `keywords.txt` |
@@ -32,7 +32,7 @@ Per-platform field values + upload pointers for the agent-stack reliability prim
 
 ## Zenodo
 
-Fastest credibility win — DOI within minutes, no editorial wait.
+Fastest credibility win: DOI within minutes, no editorial wait.
 
 - URL: https://zenodo.org/uploads/new
 - Sign-in: ORCID (you already use this)
@@ -40,9 +40,13 @@ Fastest credibility win — DOI within minutes, no editorial wait.
 - Upload: PDF + the package ZIP (Zenodo lets you attach multiple)
 - Communities: search for "open-source-research", "ai-research", and any community you've used before from your ai-eval-forge / agent-trajectory-replay submissions
 - Related identifiers: paste each Agent* repo URL with relation type "is supplemented by" → that's the discovery surface that links the paper to the eighteen npm/PyPI packages
-- Click "Publish" — the DOI is minted on click
+- Click "Publish". The DOI is minted on click.
 
-After publish: append the DOI to `submission-metadata.json` and add to your profile README.
+Published May 7, 2026:
+
+- Record: https://zenodo.org/records/20074702
+- DOI: https://doi.org/10.5281/zenodo.20074702
+- Concept DOI: https://doi.org/10.5281/zenodo.20074701
 
 ## Qeios
 
@@ -53,7 +57,7 @@ Submitted via ORCID + email verification per your established flow.
 - Upload: prefer the LaTeX source from `agent-stack-qeios-latex-source.zip`. Fallback to the PDF.
 - Abstract / keywords: paste from the files
 - Subject categories: Computer Science → Software Engineering, Computer Science → Artificial Intelligence
-- Funding / conflicts: none — leave empty
+- Funding / conflicts: none. Leave empty.
 - Note: per your 2026-05-06 audit, Qeios profile visibility lags submission by ~24 hours. After the confirmation email, recheck the profile in a day before adding to public READMEs.
 
 ## ScienceOpen
@@ -78,7 +82,7 @@ Already-confirmed venue per your 2026-05-06 audit (rag-guardrails item is live).
 - Categories: Software engineering, Artificial intelligence
 - License: CC-BY-4.0
 - Project: file under your existing "Research Footprints" project if you have one, otherwise stand-alone
-- DOI: minted automatically — Figshare's DOI shows on the published page; paste it back into the metadata
+- DOI: minted automatically. Figshare's DOI shows on the published page; paste it back into the metadata.
 
 ## TechRxiv (IEEE preprint server)
 
@@ -91,7 +95,7 @@ The IEEE-aligned preprint route. ORCID sign-in supported.
 - Upload: PDF (TechRxiv accepts PDF; LaTeX optional)
 - Abstract / keywords: paste from the files
 - Funding: none
-- After submit: TechRxiv assigns a DOI on acceptance after a short editorial check (usually 1–2 business days).
+- After submit: TechRxiv assigns a DOI on acceptance after a short editorial check, usually 1 to 2 business days.
 
 ## OSF Preprints
 
@@ -107,7 +111,7 @@ A working-paper route that doesn't need endorsement.
 
 ## arXiv (cs.SE)
 
-Endorsement-gated. Documented for completeness — submit only after you secure an endorser per your `next-venues.md`.
+Endorsement-gated. Documented for completeness. Submit only after you secure an endorser per your `next-venues.md`.
 
 - URL: https://arxiv.org/submit
 - Primary subject: cs.SE (Software Engineering)
@@ -127,7 +131,7 @@ Recommendation: skip ACM as a *direct* submission target for this preprint. Use 
 
 ## IEEE
 
-Same shape as ACM — IEEE Xplore is for accepted publications. The preprint route is **TechRxiv** (covered above) which IS aligned with IEEE.
+Same shape as ACM. IEEE Xplore is for accepted publications. The preprint route is **TechRxiv** (covered above) which IS aligned with IEEE.
 
 If you want IEEE-flavored peer review later: target an IEEE workshop with a tools/artifact track (e.g. an IEEE/ACM ICSE workshop, IEEE COMPSAC software engineering track). The current preprint is the right artifact to attach to such a submission.
 
