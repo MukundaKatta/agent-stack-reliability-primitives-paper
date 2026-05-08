@@ -4,6 +4,35 @@ Maps each of your 10 papers to every reputable preprint / artifact platform. ✅
 
 Verified live via API on 2026-05-07.
 
+## GitHub repo metadata uplift (2026-05-08)
+
+24 agent-stack repos now have `homepage = https://doi.org/10.5281/zenodo.20074702` and a shared `agent-stack` topic. This makes every repo page, npm package page, and GitHub `topic:agent-stack` search a discovery surface for the paper.
+
+| Family | Repos uplifted |
+| --- | --- |
+| AgentFit | agentfit, agentfit-py, agentfit-mcp |
+| AgentGuard | agentguard, agentguard-firewall-py, agentguard-mcp |
+| AgentSnap | agentsnap, agentsnap-py, agentsnap-mcp, agentsnap-action |
+| AgentVet | agentvet, agentvet-py, agentvet-mcp, agentvet-action |
+| AgentCast | agentcast, agentcast-py, agentcast-mcp |
+| AgentBudget | AgentBudget, AgentBudgetPy, AgentBudgetMcp |
+| AgentTrace | agenttrace |
+| Meta | agentkit, agentkit-py |
+| Umbrella | agent-stack |
+
+Search them all via: https://github.com/search?q=user%3AMukundaKatta+topic%3Aagent-stack
+
+## Hackathons (2026-05-08)
+
+| Hackathon | Track | Status |
+| --- | --- | --- |
+| Agents Assemble (Devpost) | MCP / FHIR | abandoned — requires net-new builds; would have to misrepresent agent-stack as new (it predates March 2). draft saved at 4/5 done in case rules are amended |
+| DevNetwork [AI+ML] 2026 | TrueFoundry "Resilient Agents" ($1,500 cash, 2 winners) | **submission staged** — opens May 11, calendar reminder set. Bundle: `DEVNETWORK_TRUEFOUNDRY_SUBMISSION.md` |
+
+Demo assets (reusable across any future hackathon):
+- Cover image: `agent-stack-cover.png` (1200x675)
+- Demo video: https://www.youtube.com/watch?v=3PfMBHEnmN4 (2:44, unlisted)
+
 ## Community / OSS PRs propagating the work (as of 2026-05-08)
 
 | Surface | Repo | PR | Status |
