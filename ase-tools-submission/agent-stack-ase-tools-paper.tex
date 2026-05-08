@@ -2,6 +2,15 @@
 \usepackage{listings}
 \usepackage{xcolor}
 
+% Define a JavaScript dialect for listings since the bundled language list omits it.
+\lstdefinelanguage{JavaScriptLite}{
+  morekeywords={await, async, const, let, var, function, return, if, else, for, of, in, new, import, from, throw, try, catch, while, class, extends, this},
+  morecomment=[l]{//},
+  morestring=[b]',
+  morestring=[b]",
+  sensitive=true,
+}
+
 \AtBeginDocument{%
   \providecommand\BibTeX{{%
     \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
@@ -78,7 +87,7 @@ The six primitives are designed to compose by inclusion. The conceptual pipeline
 
 A minimal AgentBudget integration is shown below; the same idiom applies to the other five primitives:
 
-\begin{lstlisting}[language=JavaScript,basicstyle=\ttfamily\small,frame=single,framesep=4pt,xleftmargin=0pt]
+\begin{lstlisting}[language=JavaScriptLite,basicstyle=\ttfamily\small,frame=single,framesep=4pt,xleftmargin=0pt]
 import { Budget } from '@mukundakatta/agentbudget';
 
 const budget = new Budget({
