@@ -4,6 +4,20 @@ Maps each of your 10 papers to every reputable preprint / artifact platform. ✅
 
 Verified live via API on 2026-05-07.
 
+## Figshare batch upload (2026-05-08, late session)
+
+3 new Figshare preprints minted, doubling agent-stack family presence on Figshare from 3 to 6 papers:
+
+| Paper | New Figshare DOI | Pairs with Zenodo DOI |
+| --- | --- | --- |
+| Agent Trajectory Replay for Debugging Tool-Using AI Workflow Regressions | [`10.6084/m9.figshare.32221671`](https://doi.org/10.6084/m9.figshare.32221671) | `10.5281/zenodo.20073574` |
+| Chetana: A Theory-Indexed Probe Framework for AI Consciousness Indicator Scoring | [`10.6084/m9.figshare.32221686`](https://doi.org/10.6084/m9.figshare.32221686) | `10.5281/zenodo.20057058` |
+| ML Intern Lab: A Minimal Agentic Workflow for Reproducible ML Experiment Reports | [`10.6084/m9.figshare.32221698`](https://doi.org/10.6084/m9.figshare.32221698) | `10.5281/zenodo.20057317` |
+
+Each Figshare record is licensed CC BY 4.0 with full metadata (title, abstract, 5 keywords, authors, category) and links to the Zenodo concept record + GitHub artifact paper repo.
+
+Two of the original five "missing on Figshare" papers (AI Eval Forge, Lightweight Eval Scorecards) were not completed — the Figshare upload modal entered a layout-broken state after sequential rapid uploads (modal renders shifted left with a grey overlay panel) that page reloads did not fix in this session. Both remain pending; the workflow that worked for the other three will work for these later (one upload per browser session is reliable; sequential 4+ exposes the layout bug).
+
 ## GitHub profile READMEs round (2026-05-08, late session)
 
 Round of README/profile/citation propagation across all owned repos:
