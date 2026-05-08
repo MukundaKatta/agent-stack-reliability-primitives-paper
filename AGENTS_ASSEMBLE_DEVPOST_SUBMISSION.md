@@ -102,6 +102,12 @@ https://www.npmjs.com/package/@mukundakatta/agentbudget
 https://doi.org/10.5281/zenodo.20074702
 ```
 
+### Demo video (already uploaded, unlisted)
+
+```
+https://www.youtube.com/watch?v=3PfMBHEnmN4
+```
+
 ## 6. Demo video script (3 min, scene-by-scene)
 
 A 3-minute screencast is enough to clear Devpost's video field. Tools you have: QuickTime screen record + a terminal + browser. No editing needed beyond a single trim.
