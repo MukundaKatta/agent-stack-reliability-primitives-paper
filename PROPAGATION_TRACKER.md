@@ -4,6 +4,20 @@ Maps each of your 10 papers to every reputable preprint / artifact platform. ✅
 
 Verified live via API on 2026-05-07.
 
+## GitHub profile READMEs round (2026-05-08, late session)
+
+Round of README/profile/citation propagation across all owned repos:
+
+| Action | Repos | Net change |
+| --- | --- | --- |
+| Profile README updated (`MukundaKatta/MukundaKatta`) | 1 | +5 publications rows (HF DOI, Medium, dev.to, Hashnode, AI Agent Olympics) + Hashnode badge |
+| Umbrella README rewritten (`MukundaKatta/agent-stack`) | 1 | full landing-style README with badges, citation, blog trifecta, install snippets |
+| **CITATION.cff** added to all 24 agent-stack repos | 24 | every repo page now shows the GitHub "Cite this repository" button with Zenodo + HF DOI |
+
+Repos with new `CITATION.cff` (24): agentfit, agentfit-py, agentfit-mcp, agentguard, agentguard-firewall-py, agentguard-mcp, agentsnap, agentsnap-py, agentsnap-mcp, agentsnap-action, agentvet, agentvet-py, agentvet-mcp, agentvet-action, agentcast, agentcast-py, agentcast-mcp, AgentBudget, AgentBudgetPy, AgentBudgetMcp, agenttrace, agentkit, agentkit-py, agent-stack.
+
+The CITATION.cff carries both the Zenodo DOI (`10.5281/zenodo.20074702`) and the HF DOI (`10.57967/hf/8720`) under `identifiers`, plus the preferred-citation block. GitHub auto-renders this as the "Cite this repository" sidebar button.
+
 ## Personal landing page refresh (2026-05-08)
 
 `mukundakatta.github.io/agent-stack` updated to surface today's new artifacts in the hero CTAs:
