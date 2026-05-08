@@ -4,6 +4,18 @@ Maps each of your 10 papers to every reputable preprint / artifact platform. ✅
 
 Verified live via API on 2026-05-07.
 
+## dev.to blog post (2026-05-08) ✅ NEW UNIQUE PLATFORM
+
+A markdown-formatted technical post with code examples on dev.to:
+
+- **URL:** [dev.to/mukundakatta/six-reliability-primitives-for-llm-agents-m13](https://dev.to/mukundakatta/six-reliability-primitives-for-llm-agents-m13)
+- **Title:** Six Reliability Primitives for LLM Agents
+- **Tags:** `#ai`, `#llm`, `#mcp`, `#opensource`
+- **Audience reach:** dev.to has 1M+ active developers; sister-piece to the Medium post but with a code-heavy markdown format that fits the dev.to community
+- **Author byline:** Mukunda Rao Katta (handle `mukundakatta`)
+
+Both the dev.to and Medium versions cite the same Zenodo DOI + HF DOI + GitHub umbrella, so search-engine signals reinforce each other.
+
 ## Medium blog post (2026-05-08) ✅ NEW UNIQUE PLATFORM
 
 A 4-min read blog post on Medium covering the agent-stack design pattern:
