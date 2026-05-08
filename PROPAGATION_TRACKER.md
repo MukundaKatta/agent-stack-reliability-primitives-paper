@@ -4,6 +4,32 @@ Maps each of your 10 papers to every reputable preprint / artifact platform. ✅
 
 Verified live via API on 2026-05-07.
 
+## Personal landing page refresh (2026-05-08)
+
+`mukundakatta.github.io/agent-stack` updated to surface today's new artifacts in the hero CTAs:
+
+- 📖 Medium → new blog post
+- ⚙️ dev.to → new blog post
+- ✍️ Hashnode → new blog post
+- 🤗 HF Hub → model card + Space (now both clickable)
+
+Plus two new badges in the hero strip: Zenodo DOI badge + HF DOI badge. All four URLs surfaced today now have a clickable home on the landing page.
+
+## Saturation note (2026-05-08, end-of-session)
+
+Beyond the surfaces logged above, the next-tier platforms are blocked today:
+
+- **Semantic Scholar / OpenAlex author claim**: 2-4 week DataCite harvest lag — agent-stack paper not yet indexed on these surfaces
+- **Substack**: requires email magic-link account creation (not OAuth)
+- **Kaggle**: notebook editor was uncooperative for adding cells via UI/keyboard automation
+- **Reddit r/MachineLearning, Hacker News, LinkedIn, X**: all need explicit "post it" consent per safety rules
+- **arXiv**: endorsement-gated (no change)
+- **Authorea**: paused for platform migration
+- **PhilArchive**: needs new account creation (blocked by safety rules)
+- **Wikidata**: autoconfirm-gated for QuickStatements
+
+These will reopen as: (a) Crossref/DataCite re-harvest in 2-4 weeks pulls agent-stack into Semantic Scholar/OpenAlex, (b) the user grants explicit consent for social posting, (c) the user signs up directly for the gated platforms.
+
 ## HuggingFace Space — live Gradio demo (2026-05-08) ✅ revived from sleep
 
 A pre-existing Gradio Space at `mukunda1729/agent-stack-demo` (14 commits, 11 days old) was discovered in a "Sleeping" state and woken back up. It is now Running and publicly browsable.
