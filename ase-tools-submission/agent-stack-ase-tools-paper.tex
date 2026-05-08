@@ -1,0 +1,172 @@
+\documentclass[sigconf,review]{acmart}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+\setcopyright{none}
+\settopmatter{printacmref=false, printccs=false, printfolios=true}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
+
+\acmConference[ASE '26]{40th IEEE/ACM International Conference on Automated Software Engineering}{November 16--20, 2026}{}
+
+\title{The Agent Reliability Stack: Six Single-Concern, Zero-Dependency Libraries for LLM Agents}
+
+\author{Mukunda Rao Katta}
+\affiliation{%
+  \institution{Independent Researcher}
+  \country{}
+}
+\email{mukunda.vjcs6@gmail.com}
+\orcid{0009-0007-6071-3896}
+
+\begin{abstract}
+Reliability concerns for large-language-model (LLM) agents are typically addressed inside frameworks that bundle prompting, tool routing, and runtime governance into a single dependency. We present the \emph{agent-stack}: six small, single-concern reliability libraries published independently to npm, PyPI, and the Model Context Protocol (MCP) registry. The libraries are AgentFit (context-window fitting), AgentGuard (network egress allowlist), AgentSnap (snapshot tests for tool-call traces), AgentVet (validate tool arguments before execution), AgentCast (structured-output enforcer), and AgentBudget (token and dollar caps). Each library is zero-dependency, has a TypeScript implementation with hand-maintained type declarations, a Python port with the same surface, and an MCP-server variant. Across the eighteen public packages we identify a recurring artifact pattern: a single class or function as the public surface, a typed error carrying retry-friendly context, and an opt-in automatic adapter for popular provider response shapes. The contribution is a documented design pattern for reliability primitives that compose by inclusion rather than by framework lock-in. Tool URL: \url{https://mukundakatta.github.io/agent-stack/}. Screencast: \url{https://www.youtube.com/watch?v=AGENT_STACK_DEMO}\footnote{Screencast URL will be replaced with the final upload before the camera-ready deadline.}.
+\end{abstract}
+
+\keywords{LLM agents, reliability primitives, agent infrastructure, snapshot testing, schema validation, structured output, budget caps, zero-dependency libraries, Model Context Protocol}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+LLM agent runtimes are typically distributed as monolithic frameworks. A single dependency provides prompting, tool dispatch, retries, schema validation, observability, budget enforcement, and safety filters. This packaging is convenient when an agent matches the framework's assumptions. It becomes a liability when the agent does not: framework upgrades pull in unrelated changes, opinionated defaults are difficult to override, and the operator cannot adopt one reliability concern without adopting the others.
+
+We present the agent-stack as a deliberate counterpoint. It splits reliability into six independent libraries. Each library solves one problem, has zero runtime dependencies, and can be adopted in isolation. Composition happens by including the libraries the operator needs, not by inheriting framework defaults. The artifact described in this paper is the eighteen-package public release of the stack on npm, PyPI, and the MCP registry; the tool URL above resolves to the landing page that links every package, the source code, the test suites, and the published preprint with DOI \texttt{10.5281/zenodo.20074702}.
+
+\section{The Six Primitives}
+
+\subsection{AgentFit}
+\textit{Concern:} fit a list of messages into a model's context window. The library accepts a token-aware budget, a list of messages, and a strategy. Bundled strategies are drop-oldest, drop-middle, and priority-keyed. The output is a fitted message list and a structured trim report describing which messages were dropped and why. Principal failure mode addressed: silent context truncation; AgentFit surfaces dropped messages explicitly rather than letting them disappear from the input.
+
+\subsection{AgentGuard}
+\textit{Concern:} declarative network-egress allowlist around agent tools. Tool functions are wrapped so that any outbound HTTP request to a domain not on the allowlist throws with the offending URL and the active allowlist. Principal failure mode addressed: a tool that fetches a URL the operator did not anticipate; the failure is caught at the egress site rather than discovered later in billing or data-flow audits.
+
+\subsection{AgentSnap}
+\textit{Concern:} snapshot tests for tool-call traces. Tool functions are wrapped with \texttt{traceTool}; during a recorded run the library captures the sequence of tool names, argument hashes, and result hashes into a stable JSON envelope. A baseline file is committed alongside the test, and subsequent test runs compare the new trace to the baseline and report drift in a human-readable form. Principal failure mode addressed: undetected behavior change in the tool sequence after a model or prompt revision.
+
+\subsection{AgentVet}
+\textit{Concern:} validate tool-call arguments before the tool function runs. Each tool is wrapped with a schema, a Zod validator, or a small built-in shape spec. Calls that fail validation throw a typed \texttt{ToolArgError} that carries an LLM-friendly retry hint formatted for direct insertion into the next conversation turn. Principal failure mode addressed: a model that hallucinates argument types and reaches the tool body.
+
+\subsection{AgentCast}
+\textit{Concern:} enforce structured output on LLM completions. The library wraps an LLM call with a validate-and-retry loop: the response is parsed, validation errors are translated into a feedback message, and the LLM is asked to correct itself up to a configurable retry limit. Principal failure mode addressed: a model that returns prose where the application expects a structured object.
+
+\subsection{AgentBudget}
+\textit{Concern:} track token and dollar usage across an agent run and refuse calls that would push past a configured cap. The user constructs a \texttt{Budget} with caps for input tokens, output tokens, total tokens, dollars, or any combination. After each LLM call the user records usage; the library raises \texttt{BudgetExceededError} carrying the offending cap, the limit, the attempted total, and the model name. A built-in pricing table covers the dominant Anthropic and OpenAI models. Principal failure mode addressed: a planner loop that accidentally calls a model thousands of times.
+
+\section{Cross-Cutting Invariants}
+
+The six libraries share three deliberate invariants that together define the artifact pattern.
+
+\textbf{Single noun, single verb.} AgentFit is a \emph{fit} over messages. AgentGuard is a \emph{guard} over fetch sites. AgentSnap is a \emph{snap} over tool traces. AgentVet is a \emph{vet} over tool arguments. AgentCast is a \emph{cast} over LLM outputs. AgentBudget is a \emph{record} and a \emph{cap} over LLM usage. The naming convention is part of the artifact: it tells the operator which library to reach for without consulting a manual.
+
+\textbf{Every primitive throws.} There is no silent fallback path. The libraries refuse to pretend a violated invariant is fine; the operator adopted them precisely to make a specific failure observable.
+
+\textbf{Errors are typed classes with named fields.} \texttt{Budget\-Exceeded\-Error} carries \texttt{cap}, \texttt{limit}, \texttt{attempted}, \texttt{overshoot}, and \texttt{model}. \texttt{ToolArgError} carries the tool name, the validation error, the rejected arguments, and a \texttt{toLLM\-Feedback()} method. Errors are designed to be programmatically dispatched and human-readable in incident logs simultaneously.
+
+\section{Cross-Language Symmetry}
+
+Each library exists in three implementations: TypeScript, Python, and an MCP server. The TypeScript implementation is the reference. The Python port mirrors the TypeScript surface with snake-case names. The MCP server exposes the same primitives over the Model Context Protocol so that any MCP-aware client (Claude Desktop, Cursor, Cline, Windsurf, Zed) can adopt the reliability surface declaratively from a configuration file rather than from agent code. The cost of the symmetry is that each fix must be applied three times. The benefit is that the design pattern, not any single implementation, is the unit of distribution.
+
+\section{Composition and Usage}
+
+The six primitives are designed to compose by inclusion. The conceptual pipeline runs left to right: \emph{fit} messages into context, \emph{guard} tool egress, \emph{snap} tool traces against a baseline, \emph{vet} tool arguments before execution, \emph{cast} LLM responses to typed data, and \emph{cap} token and dollar usage. The pipeline is illustrative, not enforced; each library is independent and can be adopted in isolation.
+
+A minimal AgentBudget integration is shown below; the same idiom applies to the other five primitives:
+
+\begin{lstlisting}[language=JavaScript,basicstyle=\ttfamily\small,frame=single,framesep=4pt,xleftmargin=0pt]
+import { Budget } from '@mukundakatta/agentbudget';
+
+const budget = new Budget({
+  maxTotalTokens: 200_000,
+  maxCostUsd: 5.00,
+});
+
+for (const turn of turns) {
+  const r = await client.messages.create({...});
+  budget.recordUsage({
+    model: r.model,
+    inputTokens: r.usage.input_tokens,
+    outputTokens: r.usage.output_tokens,
+  });
+}
+\end{lstlisting}
+
+Because the libraries are zero-dependency, composing them does not introduce transitive constraints. An operator can pin AgentBudget at one major version and AgentSnap at a different major version without conflict resolution. This is a deliberate trade against the convenience of a single-import framework: the operator pays a small cognitive cost in exchange for a trust surface they can audit one library at a time.
+
+\section{Evaluation Path}
+
+The artifact is evaluated at four layers. (1)~\emph{Artifact-level}: every package on npm passes \texttt{npm test} on a fresh checkout under Node 18+ and reports zero runtime dependencies under \texttt{npm ls --omit=dev}; every PyPI port passes \texttt{pytest} on Python 3.10--3.13 with no installed dependencies beyond the standard library. (2)~\emph{Integration-level}: each primitive composes with realistic provider SDK shapes (Anthropic, OpenAI, Groq) without surprise, verified through the integration tests in each repository. (3)~\emph{Incident-level}: when a primitive fires, the structured error carries enough context for the operator to fix the underlying cause without reading the library's source. (4)~\emph{Longitudinal}: across model and provider revisions, the primitives remain useful because the surfaces they wrap (token usage, tool call traces, structured output, network egress) are stable concerns even as model behavior drifts.
+
+The reproducibility package on Zenodo (DOI \texttt{10.5281/zenodo.20074702}) bundles the manuscript source, the rendered preprint PDF, the LaTeX bundle, abstracts and keywords, and a build script that regenerates the deposit from \texttt{paper.md} via \texttt{reportlab}. All eighteen packages are MIT-licensed; the manuscript is CC-BY-4.0.
+
+\section{Limitations}
+
+Three limitations are explicit. The agent-stack does not include a primitive for rate limiting; that interacts with provider headers and retry policies outside the scope of the six current libraries. It does not provide a unified observability surface; operators who want a single trace must compose one. It does not include a primitive for memory or session safety; that overlaps with personal-assistant architecture (the companion paper \emph{Karna}~\cite{karnapaper}) rather than reliability primitives.
+
+\section{Availability}
+
+\begin{itemize}
+\item Landing page: \url{https://mukundakatta.github.io/agent-stack/}
+\item Source repositories: \url{https://github.com/MukundaKatta} (\texttt{Agent*})
+\item TypeScript: \texttt{@mukundakatta/agentfit}, \texttt{agentguard}, \texttt{agentsnap}, \texttt{agentvet}, \texttt{agentcast}, \texttt{agentbudget} on npm
+\item Python: \texttt{agentfit-py}, \texttt{agentguard-firewall}, \texttt{agentsnap-py}, \texttt{agentvet-py}, \texttt{agentcast-py}, \texttt{agentbudget-py} on PyPI
+\item MCP servers: \texttt{*-mcp} variants on npm and the MCP registry
+\item Preprint: \url{https://doi.org/10.5281/zenodo.20074702}
+\item Companion paper repository: \url{https://github.com/MukundaKatta/agent-stack-reliability-primitives-paper}
+\end{itemize}
+
+\begin{thebibliography}{9}
+
+\bibitem{karnapaper}
+Mukunda Rao Katta.
+\newblock Karna: A Chat-Native, Multi-Channel Architecture for Personal AI Chief-of-Staff Agents.
+\newblock Zenodo, 2026. DOI: 10.5281/zenodo.20074229.
+
+\bibitem{mcp}
+Anthropic.
+\newblock Model Context Protocol Specification.
+\newblock \url{https://modelcontextprotocol.io/}, accessed 2026-05-07.
+
+\bibitem{langchain}
+Harrison Chase et al.
+\newblock LangChain.
+\newblock \url{https://www.langchain.com/}, accessed 2026-05-07.
+
+\bibitem{llamaindex}
+Jerry Liu et al.
+\newblock LlamaIndex.
+\newblock \url{https://www.llamaindex.ai/}, accessed 2026-05-07.
+
+\bibitem{autogen}
+Microsoft.
+\newblock AutoGen: Enable Next-Gen Large Language Model Applications.
+\newblock \url{https://microsoft.github.io/autogen/}, accessed 2026-05-07.
+
+\bibitem{openai-agents}
+OpenAI.
+\newblock OpenAI Agents SDK.
+\newblock \url{https://openai.github.io/openai-agents-python/}, accessed 2026-05-07.
+
+\bibitem{tenacity}
+Julien Danjou.
+\newblock Tenacity: Retrying library for Python.
+\newblock \url{https://github.com/jd/tenacity}, accessed 2026-05-07.
+
+\bibitem{pydantic}
+Samuel Colvin et al.
+\newblock Pydantic.
+\newblock \url{https://docs.pydantic.dev/}, accessed 2026-05-07.
+
+\bibitem{httpx}
+Tom Christie.
+\newblock HTTPX: A next generation HTTP client for Python.
+\newblock \url{https://www.python-httpx.org/}, accessed 2026-05-07.
+
+\end{thebibliography}
+
+\end{document}
