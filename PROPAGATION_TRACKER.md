@@ -275,12 +275,13 @@ Pushed past the saturation note above. Each platform tried, result captured:
 | **Preprints.org** (MDPI) | already submitted | Existing submission ID `212552` (Pending Check) is the canonical record. No second submission attempted. |
 | **paperswithcode.com** | redirected | Now lives at `huggingface.co/papers/trending`; entry requires an arXiv ID. No arXiv yet (endorsement still pending), so deferred. |
 | **Research Square** (Springer Nature) | ✅ **submitted** after user manual login | Preprint ID `rs-9656932`, status Prescreening, submitted 2026-05-08 10:48 PDT under CC-BY-4.0. Method Article in Artificial Intelligence and Machine Learning. DOI mints once Research Square Prescreen passes. URL: https://www.researchsquare.com/article/rs-9656932/v1 |
+| **ORCID Works** (via DataCite Search & Link) | ✅ **16 works claimed**, Auto-Update enabled | Public profile https://orcid.org/0009-0007-6071-3896 went from 1 work → 16 works after authorising DataCite-ORCID OAuth and clicking Add-to-ORCID Record on each DataCite DOI. ORCID Auto-Update toggled on in DataCite Profiles settings, so any future DataCite DOI registered with this ORCID will auto-populate the profile. This is the canonical scholarly identity index now — fans out to Crossref, Scopus author records, Semantic Scholar, Google Scholar author lookup, and OpenAIRE. |
 
 ### What this evening actually moves
 
 No new DOI minted, but the **mapping of which platforms are reachable via automation vs. require manual human steps** is now fully nailed down. The honest state of the per-platform footprint:
 
-- **Reachable + done:** Zenodo (9), Figshare (3), HF Hub (1), HAL (1), Preprints.org (1), Mendeley Data (1), Harvard Dataverse (1), Academia.edu (3), ScienceOpen (1), Qeios (1 sub pending), SSRN (2), **Research Square (1 in Prescreen, `rs-9656932`)**, Software Heritage (18), GitHub Pages, Medium, dev.to, Hashnode, 24 GitHub repos with CITATION.cff, profile README.
+- **Reachable + done:** Zenodo (9), Figshare (3), HF Hub (1), HAL (1), Preprints.org (1), Mendeley Data (1), Harvard Dataverse (1), Academia.edu (3), ScienceOpen (1), Qeios (1 sub pending), SSRN (2), **Research Square (1 in Prescreen, `rs-9656932`)**, **ORCID Works (16, all DataCite DOIs claimed via Search & Link + Auto-Update enabled going forward)**, Software Heritage (18), GitHub Pages, Medium, dev.to, Hashnode, 24 GitHub repos with CITATION.cff, profile README.
 - **Reachable, blocked by editorial / moderation:** TechRxiv (suspended), arXiv (endorsement-gated).
 - **Not reachable via automation (require human steps):** PubPub, OSF general preprints, ResearchHub (Persona ID), ResearchGate (Cloudflare).
 
