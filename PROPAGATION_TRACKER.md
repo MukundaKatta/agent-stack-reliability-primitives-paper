@@ -4,6 +4,18 @@ Maps each of your 10 papers to every reputable preprint / artifact platform. ✅
 
 Verified live via API on 2026-05-07.
 
+## Medium blog post (2026-05-08) ✅ NEW UNIQUE PLATFORM
+
+A 4-min read blog post on Medium covering the agent-stack design pattern:
+
+- **URL:** [medium.com/@mukunda.vjcs6/six-reliability-primitives-for-llm-agents-5fc1dfa33d93](https://medium.com/@mukunda.vjcs6/six-reliability-primitives-for-llm-agents-5fc1dfa33d93)
+- **Title:** Six Reliability Primitives for LLM Agents
+- **Length:** ~1,000 words / 4 min read
+- **Status:** Published, public, no tag set (Medium tag picker bug; can be added via post-publish edit)
+- **Audience reach:** 100M+ monthly active readers; Medium posts indexed by Google Scholar over time
+
+The post links back to the Zenodo DOI (`10.5281/zenodo.20074702`), the new HF DOI (`10.57967/hf/8720`), and the GitHub umbrella repo. Closes the long-standing 0/9 gap on Medium for the agent-stack paper.
+
 ## HuggingFace Hub — agent-stack model card (2026-05-08) ✅ NEW UNIQUE PLATFORM
 
 A second permanent DOI has been minted on a brand-new platform.
