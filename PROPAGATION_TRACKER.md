@@ -4,6 +4,17 @@ Maps each of your 10 papers to every reputable preprint / artifact platform. ✅
 
 Verified live via API on 2026-05-07.
 
+## Academia.edu batch upload (2026-05-08, late session)
+
+The two papers that the Figshare layout bug blocked were uploaded to Academia.edu instead. Academia.edu does not mint a DOI but gives the paper a public landing page indexed by Google Scholar and the Academia.edu graph (the user's profile already shows 99 citations, so the platform is well-established for them).
+
+| Paper | Status |
+| --- | --- |
+| AI Eval Forge: Mixed-Check Regression Testing for LLM and Agent Workflows | ✅ Published. Auto-extracted title + abstract; Year=2026; DOI=`10.5281/zenodo.20044318` linked to the Zenodo record |
+| Lightweight Evaluation and Operational Scorecards for Tool-Using AI Agents | ✅ Published. Auto-extracted title + abstract; Year=2026; DOI=`10.5281/zenodo.20034550` linked to the Zenodo record |
+
+Academia.edu coverage was 1/9 before this session — now 3/9. The user already had ML Intern Lab on Academia.edu (existing); these two add to that.
+
 ## Figshare batch upload (2026-05-08, late session)
 
 3 new Figshare preprints minted, doubling agent-stack family presence on Figshare from 3 to 6 papers:
