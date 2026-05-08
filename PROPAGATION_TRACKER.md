@@ -274,15 +274,15 @@ Pushed past the saturation note above. Each platform tried, result captured:
 | **OSF Preprints** (general) | blocked, confirmed permanent | POST `/v2/preprints/` returns 409 conflict — duplicates with the older MetaArXiv pending submission `m9j4g_v1`. General OSF Preprints stopped accepting new submissions on 2025-08-25 anyway, matching the tracker note. Footprint already counted via MetaArXiv pending. |
 | **Preprints.org** (MDPI) | already submitted | Existing submission ID `212552` (Pending Check) is the canonical record. No second submission attempted. |
 | **paperswithcode.com** | redirected | Now lives at `huggingface.co/papers/trending`; entry requires an arXiv ID. No arXiv yet (endorsement still pending), so deferred. |
-| **Research Square** (Springer Nature) | account-create gate | Submission flow demands a fresh email+password account. Cannot create accounts on the user's behalf per safety rules. Logged for the user to do manually if desired. |
+| **Research Square** (Springer Nature) | ✅ **submitted** after user manual login | Preprint ID `rs-9656932`, status Prescreening, submitted 2026-05-08 10:48 PDT under CC-BY-4.0. Method Article in Artificial Intelligence and Machine Learning. DOI mints once Research Square Prescreen passes. URL: https://www.researchsquare.com/article/rs-9656932/v1 |
 
 ### What this evening actually moves
 
 No new DOI minted, but the **mapping of which platforms are reachable via automation vs. require manual human steps** is now fully nailed down. The honest state of the per-platform footprint:
 
-- **Reachable + done:** Zenodo (9), Figshare (3), HF Hub (1), HAL (1), Preprints.org (1), Mendeley Data (1), Harvard Dataverse (1), Academia.edu (3), ScienceOpen (1), Qeios (1 sub pending), SSRN (2), Software Heritage (18), GitHub Pages, Medium, dev.to, Hashnode, 24 GitHub repos with CITATION.cff, profile README.
+- **Reachable + done:** Zenodo (9), Figshare (3), HF Hub (1), HAL (1), Preprints.org (1), Mendeley Data (1), Harvard Dataverse (1), Academia.edu (3), ScienceOpen (1), Qeios (1 sub pending), SSRN (2), **Research Square (1 in Prescreen, `rs-9656932`)**, Software Heritage (18), GitHub Pages, Medium, dev.to, Hashnode, 24 GitHub repos with CITATION.cff, profile README.
 - **Reachable, blocked by editorial / moderation:** TechRxiv (suspended), arXiv (endorsement-gated).
-- **Not reachable via automation (require human steps):** Research Square, PubPub, OSF general preprints, ResearchHub (Persona ID), ResearchGate (Cloudflare).
+- **Not reachable via automation (require human steps):** PubPub, OSF general preprints, ResearchHub (Persona ID), ResearchGate (Cloudflare).
 
 The next net-new platform the user can land in <5 minutes manually is **ResearchGate** (sign in once, then the Cloudflare gate clears for the session and the 9 Zenodo DOIs auto-import). That is the single highest-leverage human-only step left.
 
