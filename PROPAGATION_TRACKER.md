@@ -4,6 +4,29 @@ Maps each of your 10 papers to every reputable preprint / artifact platform. ✅
 
 Verified live via API on 2026-05-07.
 
+## End-of-session saturation note (2026-05-08, very late session)
+
+After the Academia.edu round, every realistic remaining preprint platform hit a friction wall in the same single browser session:
+
+- **ResearchGate** — Cloudflare "Verify you are human" CAPTCHA on the homepage (no automation possible)
+- **Mendeley Data** — pre-existing draft already submitted for moderation; Publish button stays grayed until moderator action
+- **Harvard Dataverse** — requires a fresh Log In flow that wasn't already cached
+- **Qeios** — ORCID OAuth attempted, but the browser's autofilled password didn't match (silent failure); needs user to clear the password manager and retry manually
+- **Open hackathons (Devpost)** — remaining list is invite-only, students-only, in-person-only, gender-restricted, or net-new-only. None of the open ones are a clean fit beyond AI Agent Olympics (already approved) and DevNetwork TrueFoundry (already staged)
+
+Today's net session delivery (cumulative across all rounds, all platforms):
+
+- 5 new DOIs (1 HF Hub + 3 Figshare + 1 Zenodo umbrella for agent-stack)
+- 2 Academia.edu papers
+- 3 blog posts (Medium + dev.to + Hashnode)
+- 9 Software Heritage source archives
+- 24 GitHub repos uplifted with paper DOI homepage URL + CITATION.cff
+- 1 hackathon registration approved (AI Agent Olympics)
+- 1 hackathon submission staged (DevNetwork TrueFoundry, opens May 11)
+- Profile READMEs refreshed (GitHub profile + agent-stack site)
+
+These 5 new DOIs all auto-propagate over the next 2-4 weeks into Crossref, OpenAIRE, Lens.org, Semantic Scholar, OpenAlex, and Google Scholar.
+
 ## Academia.edu batch upload (2026-05-08, late session)
 
 The two papers that the Figshare layout bug blocked were uploaded to Academia.edu instead. Academia.edu does not mint a DOI but gives the paper a public landing page indexed by Google Scholar and the Academia.edu graph (the user's profile already shows 99 citations, so the platform is well-established for them).
