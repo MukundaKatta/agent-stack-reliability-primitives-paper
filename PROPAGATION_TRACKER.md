@@ -4,6 +4,18 @@ Maps each of your 10 papers to every reputable preprint / artifact platform. ✅
 
 Verified live via API on 2026-05-07.
 
+## HuggingFace Space — live Gradio demo (2026-05-08) ✅ revived from sleep
+
+A pre-existing Gradio Space at `mukunda1729/agent-stack-demo` (14 commits, 11 days old) was discovered in a "Sleeping" state and woken back up. It is now Running and publicly browsable.
+
+- **URL:** https://huggingface.co/spaces/mukunda1729/agent-stack-demo
+- **Title:** The Agent Reliability Stack — Live Demo
+- **Type:** Gradio (5-tab interactive demo)
+- **Tabs:** fit (message truncation), guard (egress firewall), snap (trace diffing), vet (tool-arg validation), cast (structured output)
+- **Status:** Running. Note: shows 5 of the 6 primitives — predates AgentBudget; could be updated later to include the 6th tab.
+
+This complements the static Model card (`mukunda1729/agent-stack`, DOI `10.57967/hf/8720`) by giving readers a click-through interactive experience instead of just text. HF Hub now hosts both surfaces under the same user.
+
 ## Hashnode blog post (2026-05-08) ✅ NEW UNIQUE PLATFORM
 
 The third leg of the dev-blog trifecta (Medium + dev.to + Hashnode):
