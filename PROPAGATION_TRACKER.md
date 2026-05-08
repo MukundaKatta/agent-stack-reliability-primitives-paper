@@ -28,7 +28,7 @@ Search them all via: https://github.com/search?q=user%3AMukundaKatta+topic%3Aage
 | --- | --- | --- |
 | Agents Assemble (Devpost) | MCP / FHIR | abandoned — requires net-new builds; would have to misrepresent agent-stack as new (it predates March 2). draft saved at 4/5 done in case rules are amended |
 | DevNetwork [AI+ML] 2026 | TrueFoundry "Resilient Agents" ($1,500 cash, 2 winners) | **submission staged** — opens May 11, calendar reminder set. Bundle: `DEVNETWORK_TRUEFOUNDRY_SUBMISSION.md` |
-| AI Agent Olympics Hackathon (lablab.ai @ Milan AI Week) | Agentic Workflows ($28K+ pool) | **REGISTERED** 2026-05-08 — awaiting approval email. Online build phase May 13-19, demo + awards May 20. Calendar reminder set for May 13 7am PDT. Same submission materials reused (cover + video + DOI). On-site travel = No. |
+| AI Agent Olympics Hackathon (lablab.ai @ Milan AI Week) | Agentic Workflows ($28K+ pool) | ✅ **APPROVED** 2026-05-08 (registered + approved within ~1 hour). Online build phase May 13-19, demo + awards May 20. Calendar reminder set for May 13 7am PDT. Same submission materials reused (cover + video + DOI). On-site travel = No. |
 
 Demo assets (reusable across any future hackathon):
 - Cover image: `agent-stack-cover.png` (1200x675)
