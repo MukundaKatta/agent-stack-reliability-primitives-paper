@@ -4,6 +4,16 @@ Maps each of your 10 papers to every reputable preprint / artifact platform. ✅
 
 Verified live via API on 2026-05-07.
 
+## Hashnode blog post (2026-05-08) ✅ NEW UNIQUE PLATFORM
+
+The third leg of the dev-blog trifecta (Medium + dev.to + Hashnode):
+
+- **URL:** [mukundakatta.hashnode.dev/six-reliability-primitives-for-llm-agents](https://mukundakatta.hashnode.dev/six-reliability-primitives-for-llm-agents)
+- **Title:** Six Reliability Primitives for LLM Agents
+- **Tags:** `#ai-agents`, `#llm`, `#mcp`
+- **Length:** 684 words / 4 min read
+- **Audience reach:** Hashnode is a developer-first blogging platform with strong SEO and a cross-publication recommendation algorithm. Posts also automatically syndicate to RSS for downstream readers.
+
 ## dev.to blog post (2026-05-08) ✅ NEW UNIQUE PLATFORM
 
 A markdown-formatted technical post with code examples on dev.to:
