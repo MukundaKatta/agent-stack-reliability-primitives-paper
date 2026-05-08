@@ -1,0 +1,104 @@
+CREATE
+LAST	P31	Q13442814
+LAST	Len	"Lightweight Evaluation and Operational Scorecards for Tool-Using AI Agents"
+LAST	Den	"Scholarly preprint by Mukunda Rao Katta, Zenodo 2026, DOI 10.5281/zenodo.20034550"
+LAST	P1476	en:"Lightweight Evaluation and Operational Scorecards for Tool-Using AI Agents"
+LAST	P356	"10.5281/ZENODO.20034550"
+LAST	P407	Q1860
+LAST	P577	+2026-05-05T00:00:00Z/11
+LAST	P136	Q580922
+LAST	P1433	Q1660091
+LAST	P2093	"Mukunda Rao Katta"
+LAST	P953	"https://doi.org/10.5281/zenodo.20034550"
+
+CREATE
+LAST	P31	Q13442814
+LAST	Len	"AI Eval Forge: Mixed-Check Regression Testing for LLM and Agent Workflows"
+LAST	Den	"Scholarly preprint by Mukunda Rao Katta, Zenodo 2026, DOI 10.5281/zenodo.20044318"
+LAST	P1476	en:"AI Eval Forge: Mixed-Check Regression Testing for LLM and Agent Workflows"
+LAST	P356	"10.5281/ZENODO.20044318"
+LAST	P407	Q1860
+LAST	P577	+2026-05-05T00:00:00Z/11
+LAST	P136	Q580922
+LAST	P1433	Q1660091
+LAST	P2093	"Mukunda Rao Katta"
+LAST	P953	"https://doi.org/10.5281/zenodo.20044318"
+
+CREATE
+LAST	P31	Q13442814
+LAST	Len	"Chetana: A Theory-Indexed Probe Framework for AI Consciousness Indicator Scoring"
+LAST	Den	"Scholarly preprint by Mukunda Rao Katta, Zenodo 2026, DOI 10.5281/zenodo.20057058"
+LAST	P1476	en:"Chetana: A Theory-Indexed Probe Framework for AI Consciousness Indicator Scoring"
+LAST	P356	"10.5281/ZENODO.20057058"
+LAST	P407	Q1860
+LAST	P577	+2026-05-06T00:00:00Z/11
+LAST	P136	Q580922
+LAST	P1433	Q1660091
+LAST	P2093	"Mukunda Rao Katta"
+LAST	P953	"https://doi.org/10.5281/zenodo.20057058"
+
+CREATE
+LAST	P31	Q13442814
+LAST	Len	"ML Intern Lab: A Minimal Agentic Workflow for Reproducible Machine Learning Experiment Reports"
+LAST	Den	"Scholarly preprint by Mukunda Rao Katta, Zenodo 2026, DOI 10.5281/zenodo.20057317"
+LAST	P1476	en:"ML Intern Lab: A Minimal Agentic Workflow for Reproducible Machine Learning Experiment Reports"
+LAST	P356	"10.5281/ZENODO.20057317"
+LAST	P407	Q1860
+LAST	P577	+2026-05-06T00:00:00Z/11
+LAST	P136	Q580922
+LAST	P1433	Q1660091
+LAST	P2093	"Mukunda Rao Katta"
+LAST	P953	"https://doi.org/10.5281/zenodo.20057317"
+
+CREATE
+LAST	P31	Q13442814
+LAST	Len	"Small-Rule Guardrails for Retrieval-Augmented Generation: Prompt Injection and Vector Poisoning Checks"
+LAST	Den	"Scholarly preprint by Mukunda Rao Katta, Zenodo 2026, DOI 10.5281/zenodo.20057632"
+LAST	P1476	en:"Small-Rule Guardrails for Retrieval-Augmented Generation: Prompt Injection and Vector Poisoning Checks"
+LAST	P356	"10.5281/ZENODO.20057632"
+LAST	P407	Q1860
+LAST	P577	+2026-05-06T00:00:00Z/11
+LAST	P136	Q580922
+LAST	P1433	Q1660091
+LAST	P2093	"Mukunda Rao Katta"
+LAST	P953	"https://doi.org/10.5281/zenodo.20057632"
+
+CREATE
+LAST	P31	Q13442814
+LAST	Len	"Agent Trajectory Replay for Debugging Tool-Using AI Workflow Regressions"
+LAST	Den	"Scholarly preprint by Mukunda Rao Katta, Zenodo 2026, DOI 10.5281/zenodo.20073574"
+LAST	P1476	en:"Agent Trajectory Replay for Debugging Tool-Using AI Workflow Regressions"
+LAST	P356	"10.5281/ZENODO.20073574"
+LAST	P407	Q1860
+LAST	P577	+2026-05-07T00:00:00Z/11
+LAST	P136	Q580922
+LAST	P1433	Q1660091
+LAST	P2093	"Mukunda Rao Katta"
+LAST	P953	"https://doi.org/10.5281/zenodo.20073574"
+
+CREATE
+LAST	P31	Q13442814
+LAST	Len	"Karna: A Chat-Native, Multi-Channel Architecture for Personal AI Chief-of-Staff Agents"
+LAST	Den	"Scholarly preprint by Mukunda Rao Katta, Zenodo 2026, DOI 10.5281/zenodo.20074229"
+LAST	P1476	en:"Karna: A Chat-Native, Multi-Channel Architecture for Personal AI Chief-of-Staff Agents"
+LAST	P356	"10.5281/ZENODO.20074229"
+LAST	P407	Q1860
+LAST	P577	+2026-05-07T00:00:00Z/11
+LAST	P136	Q580922
+LAST	P1433	Q1660091
+LAST	P2093	"Mukunda Rao Katta"
+LAST	P953	"https://doi.org/10.5281/zenodo.20074229"
+
+CREATE
+LAST	P31	Q13442814
+LAST	Len	"Six Reliability Primitives for LLM Agents: An Artifact Pattern for Stackable, Single-Concern Libraries"
+LAST	Den	"Scholarly preprint by Mukunda Rao Katta, Zenodo 2026, DOI 10.5281/zenodo.20074702"
+LAST	P1476	en:"Six Reliability Primitives for LLM Agents: An Artifact Pattern for Stackable, Single-Concern Libraries"
+LAST	P356	"10.5281/ZENODO.20074702"
+LAST	P407	Q1860
+LAST	P577	+2026-05-07T00:00:00Z/11
+LAST	P136	Q580922
+LAST	P1433	Q1660091
+LAST	P2093	"Mukunda Rao Katta"
+LAST	P953	"https://doi.org/10.5281/zenodo.20074702"
+
