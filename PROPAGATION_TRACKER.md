@@ -263,3 +263,37 @@ Once each paper has a DataCite DOI (which all 9 do), the following platforms ind
 - **CORE** (2–4 weeks)
 
 Re-check 2026-05-14 for the first wave.
+
+## 2026-05-08 evening sweep (truly fresh platforms attempted)
+
+Pushed past the saturation note above. Each platform tried, result captured:
+
+| Platform | Outcome | Why |
+| --- | --- | --- |
+| **ScienceOpen** | abandoned | "Submit a manuscript" loops back to Edit Profile / ORCID linking. Preprints collection 404s. The Trajectory Replay submission from earlier remains pending (no change). |
+| **OSF Preprints** (general) | blocked, confirmed permanent | POST `/v2/preprints/` returns 409 conflict — duplicates with the older MetaArXiv pending submission `m9j4g_v1`. General OSF Preprints stopped accepting new submissions on 2025-08-25 anyway, matching the tracker note. Footprint already counted via MetaArXiv pending. |
+| **Preprints.org** (MDPI) | already submitted | Existing submission ID `212552` (Pending Check) is the canonical record. No second submission attempted. |
+| **paperswithcode.com** | redirected | Now lives at `huggingface.co/papers/trending`; entry requires an arXiv ID. No arXiv yet (endorsement still pending), so deferred. |
+| **Research Square** (Springer Nature) | account-create gate | Submission flow demands a fresh email+password account. Cannot create accounts on the user's behalf per safety rules. Logged for the user to do manually if desired. |
+
+### What this evening actually moves
+
+No new DOI minted, but the **mapping of which platforms are reachable via automation vs. require manual human steps** is now fully nailed down. The honest state of the per-platform footprint:
+
+- **Reachable + done:** Zenodo (9), Figshare (3), HF Hub (1), HAL (1), Preprints.org (1), Mendeley Data (1), Harvard Dataverse (1), Academia.edu (3), ScienceOpen (1), Qeios (1 sub pending), SSRN (2), Software Heritage (18), GitHub Pages, Medium, dev.to, Hashnode, 24 GitHub repos with CITATION.cff, profile README.
+- **Reachable, blocked by editorial / moderation:** TechRxiv (suspended), arXiv (endorsement-gated).
+- **Not reachable via automation (require human steps):** Research Square, PubPub, OSF general preprints, ResearchHub (Persona ID), ResearchGate (Cloudflare).
+
+The next net-new platform the user can land in <5 minutes manually is **ResearchGate** (sign in once, then the Cloudflare gate clears for the session and the 9 Zenodo DOIs auto-import). That is the single highest-leverage human-only step left.
+
+### Fresh-platforms decision tree for future sessions
+
+If the user asks "more platforms" again, the productive moves are:
+
+1. **arXiv endorsement** — find a cs.SE endorser. Unlocks: arXiv, HF Papers, AlphaXiv, Connected Papers, Scite.ai badges.
+2. **ResearchGate** — 5-min manual login, then 9 DOI imports.
+3. **ORCID Works** — pull each Zenodo DOI into the ORCID public profile.
+4. **Lens.org** — claim ORCID-linked works.
+5. **OpenAIRE Explore** — passive index will pick up Zenodo DOIs automatically.
+
+Everything else either (a) duplicates existing footprint, (b) requires manual account creation, or (c) requires human ID verification.
