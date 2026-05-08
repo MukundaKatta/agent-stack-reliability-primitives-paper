@@ -4,6 +4,23 @@ Maps each of your 10 papers to every reputable preprint / artifact platform. ✅
 
 Verified live via API on 2026-05-07.
 
+## HuggingFace Hub — agent-stack model card (2026-05-08) ✅ NEW UNIQUE PLATFORM
+
+A second permanent DOI has been minted on a brand-new platform.
+
+| Field | Value |
+| --- | --- |
+| Repo | [`mukunda1729/agent-stack`](https://huggingface.co/mukunda1729/agent-stack) |
+| HF DOI | **[`10.57967/hf/8720`](https://doi.org/10.57967/hf/8720)** (DataCite-registered) |
+| Revision | `bceead8` |
+| Tags | English, agent-stack, agents, llm, mcp, reliability, npm, pypi, typescript, python, anthropic, openai, tool-use |
+| License | MIT |
+| Visibility | Public, permanent (DOI mint locked rename/delete/transfer/visibility) |
+
+The agent-stack now has **two parallel DOIs**: the original Zenodo `10.5281/zenodo.20074702` (DataCite, paper) + the new HuggingFace `10.57967/hf/8720` (DataCite, library card). Both resolve through `doi.org`.
+
+Discovery side-effect: HF Hub's tag pages and search index every repo by its tags — `topic:llm`, `topic:mcp`, `topic:agents` are now discovery surfaces for the paper too.
+
 ## GitHub repo metadata uplift (2026-05-08)
 
 24 agent-stack repos now have `homepage = https://doi.org/10.5281/zenodo.20074702` and a shared `agent-stack` topic. This makes every repo page, npm package page, and GitHub `topic:agent-stack` search a discovery surface for the paper.
