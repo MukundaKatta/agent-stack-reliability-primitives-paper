@@ -1,0 +1,52 @@
+name: Build LaTeX papers
+
+# Compiles the LaTeX manuscripts in this repository to verify that the
+# sources stay buildable. This is an additive, non-breaking check: it only
+# reads the existing .tex sources and produces PDFs as build artifacts.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.tex"
+      - ".github/workflows/ci.yml"
+  pull_request:
+    paths:
+      - "**/*.tex"
+      - ".github/workflows/ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Compile manuscripts
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: qeios-manuscript
+            root_file: agent-stack-qeios-manuscript.tex
+            working_directory: .
+          - name: ase-tools-paper
+            root_file: agent-stack-ase-tools-paper.tex
+            working_directory: ase-tools-submission
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compile ${{ matrix.name }}
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: ${{ matrix.root_file }}
+          working_directory: ${{ matrix.working_directory }}
+
+      - name: Upload PDF
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.name }}-pdf
+          path: ${{ matrix.working_directory }}/*.pdf
+          if-no-files-found: ignore
